@@ -17,8 +17,8 @@ jobs:
     working_directory: ~/repo/ci-start
 
     steps:
-      - checkout
-        path: ~/repo
+      - checkout:
+          path: ~/repo
 
       # Download and cache dependencies
       - restore_cache:
@@ -36,6 +36,6 @@ jobs:
 
       # buil!
       - run: yarn build
-      
+
       # run tests!
       - run: yarn test
